@@ -443,10 +443,8 @@ BaseBackend::Context::SetFixedSizedInputTensor(
   // included in the dynamic batch.
   std::vector<size_t> expected_byte_sizes;
   for (auto& payload : *payloads) {
-    const InferRequestHeader& request_header =
-        payload.request_provider_->RequestHeader();
-    expected_byte_sizes.push_back(
-        request_header.batch_size() * batch1_byte_size);
+    const InferenceRequest& irequest = payload.request_provider_->Request();
+    expected_byte_sizes.push_back(irequest.BatchSize() * batch1_byte_size);
   }
 
   input->memory_type_ = (TRTISTF_TensorIsGPUTensor(tensor))
