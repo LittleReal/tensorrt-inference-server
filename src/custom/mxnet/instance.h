@@ -7,6 +7,7 @@
 // Path for c_predict_api
 #include <mxnet/c_predict_api.h>
 
+
 class MxnetInstance{
     public:
 
