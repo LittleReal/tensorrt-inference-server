@@ -20,7 +20,7 @@ ErrorCodes::ErrorCodes()
 const char* ErrorCodes::ErrorString(int error) const
 {
     if (ErrorIsRegistered(error)) {
-      return err_messages_[error].c_str();
+        return err_messages_[error].c_str();
     }
 
     return err_messages_[Unknown].c_str();
@@ -35,6 +35,6 @@ int ErrorCodes::RegisterError(const string& error_string)
 void ErrorCodes::RegisterError(int error, const string& error_string)
 {
     if (ErrorIsRegistered(error)) {
-      err_messages_[error] = error_string;
+        err_messages_[error] = error_string;
     }
 }
