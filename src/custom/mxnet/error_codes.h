@@ -5,27 +5,40 @@
 #include <vector>
 
 
+using namespace std;
+
 class ErrorCodes {
     public:
-        /// Error code for success
         static const int Success = 0;
-
-        /// Error code for creation failure.
+        
         static const int CreationFailure = 1;
-
-        /// Error code when instance failed to load the model configuration.
+        
         static const int InvalidModelConfig = 2;
-
-        /// Error code when V1 version of a function is called
-        /// while the custom backend is not V1.
+        
         static const int InvalidInvocationV1 = 3;
 
-        /// Error code when V2 version of a function is called
-        /// while the custom backend is not V2.
         static const int InvalidInvocationV2 = 4;
 
+        static const int ReadModelFileError = 5;
+
+        static const int GetInputFailed = 6;
+
+        static const int GetOutputFailed = 7;
+
+        static const int MXNetCreateFailed = 8;
+
+        static const int MXNetSetInputFailed = 9;
+
+        static const int MXNetForwardFailed = 10;
+
+        static const int MXNetGetOutputFailed = 11;
+
+        static const int MXNetFreeFailed = 12;
+
+        static const int VersionGetFailed = 13;
+
         /// Error code for an unknown error.
-        static const int Unknown = 5;
+        static const int Unknown = 14;
 
         ErrorCodes();
         ~ErrorCodes() = default;

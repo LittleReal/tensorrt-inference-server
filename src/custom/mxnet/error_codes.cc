@@ -6,14 +6,47 @@ using namespace std;
 ErrorCodes::ErrorCodes()
 {
     RegisterError(Success, "success");
+
     RegisterError(CreationFailure, "failed to create instance");
+
     RegisterError(InvalidModelConfig, "invalid model configuration");
+
     RegisterError(
         InvalidInvocationV1,
         "invalid V1 function invocation while the custom backend is not V1");
     RegisterError(
         InvalidInvocationV2,
         "invalid V2 function invocation while the custom backend is not V2");
+
+    RegisterError(
+        ReadModelFileError,
+        "read system json or params file failed");
+
+    RegisterError(
+        GetInputFailed,
+        "get input data failed");
+
+    RegisterError(GetOutputFailed,
+        "get output data failed");
+    
+    RegisterError(MXNetCreateFailed,
+        "mxnet create predictor failed");
+    
+    RegisterError(MXNetSetInputFailed,
+        "mxnet set input failed");
+
+    RegisterError(MXNetForwardFailed,
+        "mxnet forward failed");
+    
+    RegisterError(MXNetGetOutputFailed,
+        "mxnet get output failed");
+    
+    RegisterError(MXNetFreeFailed, 
+        "mxnet free failed");
+    
+    RegisterError(VersionGetFailed,
+        "version get must be after instance create");
+
     RegisterError(Unknown, "unknown error");
 }
 
